@@ -52,7 +52,6 @@ for page in range(0, int(pageNr) * 10, 10):
         except:
             d["Half Baths"] = None
         for colGroup in item.find_all("div", {"class":"columnGroup"}):
-            #print(colGroup)
             for featureGroup, featureName in zip(colGroup.find_all("span", {"class": "featureGroup"}), colGroup.find_all("span", {"class": "featureName"})):
                 if "Lot Size" in featureGroup.text:
                     d["Lot Size"] = featureName.text
